@@ -1,0 +1,21 @@
+.dropdown {
+  cursor: pointer;
+  max-height: 300px;
+  & div {
+    &:nth-child(2) {
+      display: flex;
+      align-items: center;
+      margin-bottom: -2px;
+    }
+  }
+}
+
+.arrow {
+  transition: all 0.3s ease 0s;
+  width: 13px;
+  height: 13px;
+}
+
+.active {
+  transform: rotate(180deg);
+}

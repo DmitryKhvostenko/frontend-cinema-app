@@ -1,0 +1,93 @@
+.catalog {
+  background-color: #3f3f3f;
+  padding-top: 100px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0px 15px;
+  max-width: 1230px;
+}
+
+.main {
+  margin-bottom: 50px;
+}
+
+.header {
+  margin-bottom: 20px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.188);
+  padding: 10px 20px;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & select {
+    outline: transparent;
+    border: none;
+    background-color: transparent;
+  }
+  & > a,
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: none;
+    cursor: pointer;
+    color: rgb(115, 115, 115);
+    text-indent: 1px;
+    text-overflow: '';
+  }
+  & option {
+    color: black;
+  }
+}
+
+.headerBottom {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  color: rgb(115, 115, 115);
+}
+
+.activeFilterItem {
+  display: flex;
+  column-gap: 3px;
+  align-items: center;
+  border: 1px solid #3f3f3f;
+  border-radius: 30px;
+  padding: 2px 10px;
+  font-size: 0.85em;
+}
+
+.filtersLabel {
+  display: flex;
+  align-items: center;
+  height: 26px;
+}
+
+.disableFilter {
+  cursor: pointer;
+  font-size: 1.25em;
+  line-height: 0;
+  & img {
+    width: 14px;
+    height: auto;
+  }
+}
+
+.border {
+  margin: 15px 0;
+  background-color: #3f3f3f;
+  width: 100%;
+  height: 1px;
+}
+
+.list {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

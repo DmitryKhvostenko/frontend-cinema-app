@@ -1,0 +1,58 @@
+.error {
+  flex: 1 1 auto;
+  background-color: #3f3f3f;
+  padding-top: 100px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0px 15px;
+  max-width: 1230px;
+  text-align: center;
+}
+
+.title {
+  color: #fff;
+  font-size: 4em;
+}
+.text {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 1.5em;
+}
+.image {
+  width: 200px;
+}
+.button {
+  max-width: fit-content;
+  display: block;
+  margin: 0 auto 70px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #ff9800;
+  padding: 10px 20px;
+  height: 100%;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    background-color: #ff8000;
+  }
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 2em;
+  }
+}

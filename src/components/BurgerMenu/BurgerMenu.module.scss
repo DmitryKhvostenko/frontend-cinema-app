@@ -1,0 +1,84 @@
+.userWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  margin: 0 15px;
+  padding: 0 !important;
+  color: rgb(219, 219, 219);
+  font-weight: 600;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex !important;
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  color: inherit;
+  & > * {
+    white-space: nowrap;
+  }
+  & button {
+    cursor: pointer;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  & a {
+    font-weight: 600;
+    text-decoration: none;
+    &:nth-child(2) {
+      transition: all 0.3s ease 0s;
+      border-radius: 4px;
+      background-color: #e5a00d;
+      padding: 4px 16px;
+      color: #000;
+      &:hover {
+        background-color: #e6aa28;
+      }
+    }
+  }
+}
+
+.border {
+  margin: 20px auto;
+  background-color: rgb(82, 82, 82);
+  width: 100%;
+  height: 1px;
+}
+
+.userBorder {
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 1px;
+  height: 33px;
+}
+
+.exit {
+  display: flex !important;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 30px !important;
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+  font-size: 0;
+  &Wrapper {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.154);
+    padding: 5px 30px;
+    width: auto;
+  }
+  & img {
+    max-width: 50px;
+  }
+}

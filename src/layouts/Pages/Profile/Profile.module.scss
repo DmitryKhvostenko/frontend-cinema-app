@@ -1,0 +1,148 @@
+.profile {
+  flex: 1 1 auto;
+  background-color: #3f3f3f;
+  padding-top: 100px;
+  color: #eeeeee;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0px 15px;
+  max-width: 1230px;
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+.mainInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #303030;
+  padding-bottom: 30px;
+}
+
+.data {
+  flex: 1 1 auto;
+}
+
+.name {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.edit {
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background: #ff9800;
+  padding: 10px 20px;
+  min-width: 130px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #ff8000;
+  }
+}
+
+.comments {
+  margin-bottom: 100px;
+  padding-top: 20px;
+  &Title {
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+}
+
+.comment {
+  display: flex;
+  column-gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #383838;
+  padding: 20px;
+  &Image {
+    width: 60px;
+    height: 90px;
+  }
+  &Info {
+    flex: 1 1 auto;
+  }
+  &Title {
+    display: flex;
+    column-gap: 6px;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    & a {
+      color: #fff;
+      text-decoration: none;
+    }
+    & span {
+      font-size: 15px;
+    }
+  }
+  &Button {
+    cursor: pointer;
+    background: transparent;
+    width: 40px;
+    height: auto;
+    & img {
+      width: 100%;
+    }
+  }
+  &WrapperText {
+    display: flex;
+    column-gap: 5px;
+    & img {
+      margin-left: -2px;
+      width: 12px;
+    }
+  }
+}
+
+.emptyComments {
+  border-radius: 10px;
+  background-color: #383838;
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .mainInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 525px) {
+  .comment {
+    row-gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    & > a,
+    &Button {
+      margin: 0 auto;
+    }
+    &Border {
+      display: none;
+    }
+    &Title {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &WrapperText {
+      justify-content: center;
+    }
+  }
+}

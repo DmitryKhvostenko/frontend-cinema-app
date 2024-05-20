@@ -1,0 +1,121 @@
+.signIn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  & .active {
+    display: block;
+    body {
+      overflow: hidden !important;
+    }
+  }
+  &Background {
+    background-color: rgba(0, 0, 0, 0.565);
+    width: inherit;
+    height: inherit;
+  }
+  &Content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0;
+    border-radius: 10px;
+    background-color: #282a2d;
+    color: #fff;
+  }
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    background-color: #1e2022;
+    padding: 20px 30px;
+    font-size: 20px;
+  }
+  &Close {
+    cursor: pointer;
+    background-color: transparent;
+    & img {
+      width: 20px;
+    }
+  }
+  &Main {
+    border-radius: 0 0 10px 10px;
+    padding: 30px;
+  }
+  &Block {
+    margin-bottom: 20px;
+    &:nth-child(1) {
+      & Input {
+        background-image: url('./user.svg');
+      }
+    }
+    &:nth-child(2) {
+      & Input {
+        background-image: url('./lock.svg');
+        background-size: 13px;
+      }
+    }
+  }
+  &Text {
+    margin-bottom: 10px;
+  }
+  &Input {
+    outline: transparent;
+    border-radius: 5px;
+    background-position: 7px;
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-color: #1e2022;
+    padding-left: 30px;
+    width: 100%;
+    height: 30px;
+    color: #fff;
+  }
+  &Button {
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background: #ff9800;
+    padding: 10px 20px;
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #ff8000;
+    }
+  }
+  &OnError {
+    color: #961f1f;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .signIn {
+    &Header {
+      padding: 15px 15px;
+    }
+    &Main {
+      padding: 15px;
+    }
+    &Content {
+      width: 266px;
+    }
+    &Button {
+      padding: 10px 10px;
+      font-size: 15px;
+    }
+  }
+}
