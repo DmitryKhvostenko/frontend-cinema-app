@@ -1,6 +1,5 @@
 {
   "name": "cinema-app",
-  "homepage": "https://dmitrykhvostenko.github.io/frontend-cinema-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
