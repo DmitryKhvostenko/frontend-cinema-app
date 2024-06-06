@@ -7,15 +7,15 @@
   "giving": "Giving",
   "partners": "Partners",
   "press room": "Press Room",
-  "plex gear": "Plex Gear",
-  "the plex blog": "The Plex Blog",
-  "plex pass": "Plex Pass",
+  "elex gear": "Elex Gear",
+  "the elex blog": "The Elex Blog",
+  "elex pass": "Elex Pass",
   "go premium": "Go Premium",
-  "plexamp": "Plexamp",
-  "plex labs": "Plex Labs",
+  "elexamp": "Elexamp",
+  "elex labs": "Elex Labs",
   "get perks": "Get Perks",
   "downloads": "Downloads",
-  "plex media server": "Plex Media Server",
+  "elex media server": "Elex Media Server",
   "apps & devices": "Apps & Devices",
   "where to watch": "Where to Watch",
   "support": "Support",
@@ -59,6 +59,7 @@
   "comments": {
     "comments title": "Comments",
     "warning": "The minimum comment length is 5 characters. Respect yourself and others!",
+    "alternate warning": "Only registered users can leave comments!",
     "textholder": "Write a review",
     "nameholder": "Your name",
     "send": "Send review"
@@ -117,11 +118,12 @@
     "email": "Email",
     "password": "Password",
     "confirm password": "Confirm password",
-    "send": "Send"
+    "send": "Send",
+    "tip": "Password: at least 8 characters, one digit, one lowercase, one uppercase"
   },
   "home": {
     "title": "Meet your TV concierge",
-    "text": "Need something to watch? We’re on it. Plex combines free movies & TV with your favorite streaming services, so there’s always more to discover",
+    "text": "Need something to watch? We’re on it. Elex combines free movies & TV with your favorite streaming services, so there’s always more to discover",
     "button": "Start Watching"
   },
   "carousel": {

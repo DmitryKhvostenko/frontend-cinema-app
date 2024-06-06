@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import image01 from './image01.png';
 
 import styles from './ItemCarousel.module.scss';
@@ -10,7 +12,7 @@ const ItemCarousel = ({ slideData }) => {
           <div className={styles.sliderItemTitle}>{slideData.title}</div>
           <div className={styles.sliderItemSubTitle}>{slideData.subTitle}</div>
           <button className={styles.sliderItemButton}>
-            <a href="/#">{slideData.buttonLabel}</a>
+            <Link to="/placeholder">{slideData.buttonLabel}</Link>
           </button>
         </div>
         <div className={styles.sliderItemImage}>

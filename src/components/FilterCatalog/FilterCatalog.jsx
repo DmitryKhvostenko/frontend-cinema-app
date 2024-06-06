@@ -1,10 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Dropdown, Space } from 'antd';
-
-import GenreMap from 'utils/GenreMap';
-
 import movies from 'backend/Movies.json';
+import GenreMap from 'utils/GenreMap';
 
 import styles from './FilterCatalog.module.scss';
 

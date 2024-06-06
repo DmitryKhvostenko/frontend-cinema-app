@@ -1,6 +1,6 @@
 import styles from './Placeholder.module.scss';
 
-const Placeholder = ({t}) => {
+const Placeholder = ({ t }) => {
   return (
     <div className={styles.placeholder}>
       <div className={styles.container}>
@@ -16,10 +16,7 @@ const Placeholder = ({t}) => {
               alt="Cat"
             />
             <img src="https://i.imgur.com/3j3rU.jpg" alt="Cat" />
-            <img
-              src="https://avatars.dzeninfra.ru/get-zen_doc/244664/pub_6391fd0f50d44f6924970757_6391fd5a4ed77d6cebe1e439/scale_1200"
-              alt="Cat"
-            />
+            <img src="https://i.pinimg.com/564x/05/1f/42/051f42850d1beff69a92d94f40a6500e.jpg" alt="Cat" />
             <img src="https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg" alt="Cat" />
             <img
               src="https://preview.redd.it/cute-cats-v0-jtt0lyi4mpy81.jpg?width=882&format=pjpg&auto=webp&s=53691e230b9d2b3a8b339d6cf136240407721822"

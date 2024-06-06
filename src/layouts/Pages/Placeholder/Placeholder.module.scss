@@ -1,6 +1,6 @@
 .placeholder {
   flex: 1 1 auto;
-  background-color: #3f3f3f;
+  background-color: var(--bg-color);
   padding-top: 100px;
 }
 
@@ -12,13 +12,13 @@
 }
 
 .title {
-  color: #fff;
+  color: var(--white-color);
   font-size: 4em;
 }
 
 .text {
   margin-bottom: 50px;
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5em;
 }
 .images {

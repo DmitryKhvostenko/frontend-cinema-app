@@ -1,0 +1,3 @@
+Router   basename='/cinema-app'
+
+  "homepage": "https://dmitrykhvostenko.github.io/cinema-app/",

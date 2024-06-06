@@ -11,8 +11,7 @@
 }
 
 .scrolling {
-  // background-color: rgb(22, 22, 22) !important;
-  background-color: #282a2d !important;
+  background-color: var(--dark-bg-color) !important;
   padding: 20px 16px !important;
 }
 
@@ -50,7 +49,7 @@
   align-items: center;
   width: 100%;
   max-width: 500px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--white-grey-color);
 }
 
 .buttons {
@@ -63,13 +62,14 @@
     white-space: nowrap;
   }
   & button {
+    transition: all 0.3s ease 0s;
     cursor: pointer;
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--white-grey-color);
     font-weight: 600;
     text-decoration: none;
     &:hover {
-      color: #fff;
+      color: var(--hover-color);
     }
   }
   & a {
@@ -78,11 +78,11 @@
     &:nth-child(2) {
       transition: all 0.3s ease 0s;
       border-radius: 4px;
-      background-color: #e5a00d;
+      background-color: var(--button-bg);
       padding: 4px 16px;
       color: #000;
       &:hover {
-        background-color: #e6aa28;
+        background-color: var(--hover-color);
       }
     }
   }
@@ -106,10 +106,10 @@
   & a {
     transition: all 0.3s ease 0s;
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: var(--white-grey-color) !important;
     text-decoration: none;
     &:hover {
-      color: #fff !important;
+      color: var(--hover-color) !important;
     }
   }
 }
@@ -121,7 +121,7 @@
 
 .user {
   margin: 0 15px;
-  color: rgb(219, 219, 219) !important;
+  color: var(--white-color) !important;
   font-weight: 600;
   text-decoration: none;
 }

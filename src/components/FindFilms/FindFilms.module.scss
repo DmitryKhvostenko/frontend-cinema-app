@@ -13,7 +13,7 @@
   height: 32px;
   &:focus {
     background-image: url('./search-black.svg');
-    background-color: #fff;
+    background-color: var(--white-color);
   }
 }
 
@@ -58,7 +58,7 @@
   font-size: 0.87em;
   & > div:first-child {
     margin-bottom: 10px;
-    color: #fff;
+    color: var(--white-color);
   }
 }
 

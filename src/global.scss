@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+:root {
+  --bg-color: #3f3f3f;
+  --dark-bg-color: #282a2d;
+  --input-bg: #2b2b2c;
+  --button-bg: #f7a707;
+  --hover-color: #f79707;
+  --white-color: #fff;
+  --white-grey-color: #ccc;
+  --grey-color: #737373;
+}
+
 body {
   overflow-x: hidden;
   font-family: Roboto;
@@ -32,7 +43,7 @@ body,
 
 .ant-dropdown-menu-item-selected {
   background-color: rgb(231, 231, 231) !important;
-  color: #e5a00d !important;
+  color: var(--button-bg) !important;
 }
 
 html {
@@ -121,7 +132,7 @@ html {
 
 /* General sidebar styles */
 .bm-menu {
-  background: #3f3f3f;
+  background: var(--bg-color);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -131,12 +142,7 @@ html {
 }
 
 .bm-menu a {
-  color: #b8b7ad;
-}
-
-.bm-menu a:hover,
-a:focus {
-  color: #c94e50;
+  color: var(--white-grey-color);
 }
 
 /* Morph shape necessary with bubble or elastic */

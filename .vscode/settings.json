@@ -4,5 +4,7 @@
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["javascript"],
-  "eslint.experimental.useFlatConfig": true
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true
 }

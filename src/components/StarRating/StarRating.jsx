@@ -30,10 +30,10 @@ const StarRating = ({ movie, grade, setGrade }) => {
               key={index}
               src={
                 index + 1 <= grade
-                  ? '/images/AppRating/full-rating.svg'
+                  ? './../images/AppRating/full-rating.svg'
                   : index + 0.1 <= grade && index + 0.9 >= grade
-                    ? '/images/AppRating/half-rating.svg'
-                    : '/images/AppRating/no-rating.svg'
+                    ? './../images/AppRating/half-rating.svg'
+                    : './../images/AppRating/no-rating.svg'
               }
               alt={
                 index + 1 <= grade
@@ -62,7 +62,9 @@ const StarRating = ({ movie, grade, setGrade }) => {
                 handleMouseOver(index);
               }}
               key={index}
-              src={index <= hoverIndex ? '/images/AppRating/full-rating.svg' : '/images/AppRating/no-rating.svg'}
+              src={
+                index <= hoverIndex ? './../images/AppRating/full-rating.svg' : './../images/AppRating/no-rating.svg'
+              }
               alt={index <= hoverIndex ? 'full-star' : 'no-star'}
             />
           ))}

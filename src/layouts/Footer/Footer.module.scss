@@ -1,5 +1,5 @@
 .footer {
-  background-color: #282a2d;
+  background-color: var(--dark-bg-color);
 }
 .wrapper {
   margin: 0 auto;
@@ -63,19 +63,19 @@
     margin-bottom: 20px;
     font-size: 1em;
     & .footerLink {
-      color: #ffffff;
+      color: var(--white-grey-color);
       font-weight: 700;
     }
   }
   &:hover .footerLink {
-    color: #e5a00d !important;
+    color: var(--button-bg);
   }
 }
 
 .footerLink {
   transition: all 0.3s ease 0s;
   padding-top: 12px;
-  color: #ffffff87 !important;
+  color: var(--grey-color);
   text-decoration: none;
 }
 
@@ -101,15 +101,15 @@
   row-gap: 3px;
   flex-wrap: wrap;
   align-items: center;
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--white-grey-color);
   font-size: 0.8em;
   & a,
   button {
     transition: all 0.3s ease 0s;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--grey-color);
     text-decoration: none;
     &:hover {
-      color: #e5a00d !important;
+      color: var(--button-bg) !important;
     }
   }
   & button {

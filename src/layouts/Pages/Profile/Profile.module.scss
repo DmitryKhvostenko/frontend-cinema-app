@@ -1,8 +1,8 @@
 .profile {
   flex: 1 1 auto;
-  background-color: #3f3f3f;
+  background-color: var(--bg-color);
   padding-top: 100px;
-  color: #eeeeee;
+  color: var(--white-grey-color);
 }
 
 .wrapper {
@@ -13,6 +13,7 @@
 
 .title {
   margin-bottom: 30px;
+  color: var(--white-color);
 }
 
 .mainInfo {
@@ -30,6 +31,7 @@
 .name {
   margin: 0;
   margin-bottom: 15px;
+  color: var(--white-color);
 }
 
 .edit {
@@ -37,17 +39,17 @@
   cursor: pointer;
   margin-bottom: 10px;
   border-radius: 4px;
-  background: #ff9800;
+  background: var(--button-bg);
   padding: 10px 20px;
   min-width: 130px;
-  color: #fff;
+  color: var(--white-color);
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.06em;
   text-align: center;
   text-transform: uppercase;
   &:hover {
-    background-color: #ff8000;
+    background-color: var(--hover-color);
   }
 }
 
@@ -82,7 +84,7 @@
     margin-bottom: 10px;
     font-size: 20px;
     & a {
-      color: #fff;
+      color: var(--white-color);
       text-decoration: none;
     }
     & span {

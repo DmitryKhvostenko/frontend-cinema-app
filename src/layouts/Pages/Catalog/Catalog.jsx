@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-
-import sortFilms from 'utils/SortedCatalog';
-import MovieCard from 'components/MovieCard/MovieCard';
-import SortCatalog from 'components/SortCatalog/SortCatalog';
-
 import Movies from 'backend/Movies.json';
 import FilterCatalog from 'components/FilterCatalog/FilterCatalog';
+import MovieCard from 'components/MovieCard/MovieCard';
+import SortCatalog from 'components/SortCatalog/SortCatalog';
+import sortFilms from 'utils/SortedCatalog';
 
 import styles from './Catalog.module.scss';
 
@@ -18,7 +16,6 @@ const Catalog = ({ t }) => {
     { id: 'year', label: 'Year', isActive: false, showedFilms: Movies },
     { id: 'genre', label: 'Genre', isActive: false, showedFilms: Movies },
   ]);
-
   const refreshFilter = (filterId, updateFields) => {
     setActiveFilters((prevFilters) => {
       return prevFilters.map((filter) => {

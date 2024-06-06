@@ -28,7 +28,7 @@
   column-gap: 5px;
   align-items: end;
   margin-bottom: 30px;
-  color: #9a9a9a;
+  color: (var(--white-grey-color));
   font-weight: 700;
   font-size: 20px;
   & img {
@@ -38,18 +38,18 @@
 }
 
 .itemRating {
-  color: #fff;
+  color: var(--white-color);
   font-weight: 600;
   font-size: 20px;
   & span {
-    color: rgb(154, 154, 154);
+    color: var(--white-grey-color);
     font-weight: 400;
   }
 }
 
 .downloadTitle {
   margin-bottom: 16px;
-  color: #fff;
+  color: var(--white-color);
   font-weight: 700;
   font-size: 1.6em;
 }
@@ -57,7 +57,7 @@
 .downloadButton {
   display: block;
   margin-bottom: 15px;
-  border: 1px solid #fff;
+  border: 1px solid var(--white-color);
   border-radius: 8px;
   padding: 2px;
   width: 178px;

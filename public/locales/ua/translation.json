@@ -7,15 +7,15 @@
   "giving": "Пожертви",
   "partners": "Партнери",
   "press room": "Прес-центр",
-  "plex gear": "Plex Gear",
-  "the plex blog": "Блог Plex",
-  "plex pass": "Plex Pass",
+  "elex gear": "Elex Gear",
+  "the elex blog": "Блог Elex",
+  "elex pass": "Elex Pass",
   "go premium": "Отримати преміум",
-  "plexamp": "Plexamp",
-  "plex labs": "Plex Labs",
+  "elexamp": "Elexamp",
+  "elex labs": "Elex Labs",
   "get perks": "Отримайте переваги",
   "downloads": "Завантаження",
-  "plex media server": "Сервер медіа Plex",
+  "elex media server": "Сервер медіа Elex",
   "apps & devices": "Додатки та пристрої",
   "where to watch": "Де дивитися",
   "support": "Підтримка",
@@ -59,12 +59,13 @@
   "comments": {
     "comments title": "Коментарі",
     "warning": "Мінімальна довжина коментаря – 5 символів. Поважайте себе та інших!",
+    "alternate warning": "Залишати коментарі можуть лише зареєстровані користувачі!",
     "textholder": "Поділіться відгуком",
     "nameholder": "Ваше ім'я",
     "send": "Відправити"
   },
   "catalog": {
-    "filter by": "Фільтрування за",
+    "filter by": "Фільтри",
     "sort dropdown": "Сортувати за",
     "filter dropdown": "Фільтр",
     "filter year": "Рік",
@@ -117,11 +118,12 @@
     "email": "Електрона адреса",
     "password": "Пароль",
     "confirm password": "Повторіть пароль",
-    "send": "Зареєструватись"
+    "send": "Зареєструватись",
+    "tip": "Пароль: мінімум 8 символів, одна цифра, одна мала і одна велика літера"
   },
   "home": {
     "title": "Кіно-гід вітає вас",
-    "text": "Шукаєте, що переглянути? Ми вам допоможемо. Plex поєднує безкоштовні фільми та телевізійні шоу з вашими улюбленими сервісами, тому тут завжди є щось нове для відкриття",
+    "text": "Шукаєте, що переглянути? Ми вам допоможемо. Elex поєднує безкоштовні фільми та телевізійні шоу з вашими улюбленими сервісами, тому тут завжди є щось нове для відкриття",
     "button": "Почати Перегляд"
   },
   "carousel": {

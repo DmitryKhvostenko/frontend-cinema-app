@@ -1,60 +1,39 @@
 import React, { memo, useEffect, useState } from 'react';
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
+import axios from '../../axios';
+
+import { updateProfile } from './../../redux/slices/auth';
 
 import styles from './AvatarComponent.module.scss';
 
-const AvatarComponent = ({ currentUser }) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const comments = JSON.parse(localStorage.getItem('comments'));
-  const {t} = useTranslation();
+const AvatarComponent = () => {
+  const dispatch = useDispatch();
+  const authData = useSelector((state) => state.auth.data);
+  const [avatarUrl, setAvatarUrl] = useState(authData ? authData.avatarUrl : '');
+  const { t } = useTranslation();
 
   useEffect(() => {
-    const savedImage = localStorage.getItem('avatarImage');
-    if (savedImage) {
-      setSelectedFile(savedImage);
+    if (authData && authData.avatarUrl) {
+      setAvatarUrl(authData.avatarUrl);
     }
-  }, []);
+  }, [authData]);
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    const imageUrl = URL.createObjectURL(file);
-    setSelectedFile(imageUrl);
-    localStorage.setItem('avatarImage', imageUrl);
-    updateAvatarInLocalStorage(currentUser.id, imageUrl);
-    updateCommentsAvatar(imageUrl);
-  };
+  const handleFileChange = async (event) => {
+    try {
+      const formData = new FormData();
+      const file = event.target.files[0];
+      formData.append('image', file);
+      const { data } = await axios.post('/upload', formData);
+      setAvatarUrl(`${process.env.REACT_APP_API_URL}${data.url}`);
+      dispatch(updateProfile({ id: authData._id, avatarUrl: `${process.env.REACT_APP_API_URL}${data.url}` }));
 
-  const updateCommentsAvatar = (imageUrl) => {
-    const updatedComments = comments.map((comment) => {
-      if (comment.comments) {
-        comment.comments = comment.comments.map((commentItem) => {
-          if (commentItem.name === currentUser.login && commentItem.avatar !== undefined) {
-            commentItem.avatar = imageUrl;
-          }
-          return commentItem;
-        });
-      }
-      return comment;
-    });
-    localStorage.setItem('comments', JSON.stringify(updatedComments));
-  };
-
-  const updateAvatarInLocalStorage = (userId, imageUrl) => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const updatedUsers = users.map((userObj) => {
-      const username = Object.keys(userObj)[0];
-      if (userObj[username].id === userId) {
-        return {
-          [username]: {
-            ...userObj[username],
-            avatar: imageUrl,
-          },
-        };
-      }
-      return userObj;
-    });
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
+      console.log(data);
+    } catch (err) {
+      console.warn(err);
+      alert('Ошибка при загрузке файла!');
+    }
   };
 
   return (
@@ -67,7 +46,7 @@ const AvatarComponent = ({ currentUser }) => {
               e.target.src = './images/icons/user-placeholder.png';
             }}
             className={styles.image}
-            src={selectedFile || './images/icons/user-placeholder.png'}
+            src={avatarUrl || './images/icons/user-placeholder.png'}
             alt="Select Image"
           />
         </div>

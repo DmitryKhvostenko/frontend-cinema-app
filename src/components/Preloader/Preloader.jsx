@@ -1,5 +1,6 @@
-import styles from './Preloader.module.scss'
 import ClipLoader from 'react-spinners/ClipLoader';
+
+import styles from './Preloader.module.scss';
 
 const Preloader = () => {
   return (
@@ -15,6 +16,6 @@ const Preloader = () => {
       </div>
     </div>
   );
-}
- 
+};
+
 export default Preloader;

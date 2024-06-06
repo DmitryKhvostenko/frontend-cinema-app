@@ -1,100 +1,112 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { format } from 'date-fns';
-import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
 
-import addComment from 'utils/AddComment';
-import { useUser } from 'utils/UserProvider';
+import axios from '../../axios';
+import { commentsByFilmId, deleteComment } from '../../redux/slices/comments';
+
+import ratingImg from './full-rating.svg';
 
 import styles from './Comments.module.scss';
 
 const Comments = ({ filmId, grade }) => {
+  const dispatch = useDispatch();
+  const [comments, setComments] = useState([]);
+  const prevComments = useSelector((state) => state.comments.comments);
+  useEffect(() => {
+    if (prevComments) {
+      console.log(prevComments);
+      console.log(comments);
+      setComments(prevComments);
+    }
+  }, [filmId, prevComments]);
+
+  useEffect(() => {
+    dispatch(commentsByFilmId(filmId));
+  }, [filmId]);
+
+  const authData = useSelector((state) => state.auth.data);
   const { t } = useTranslation();
-  const { currentUser } = useUser();
-  const userName = Object.keys(currentUser)[0];
-  const user = Object.values(currentUser)[0];
-  const [comments, setComments] = useState(JSON.parse(localStorage.getItem('comments')) || []);
-  const [thisComments, setThisComments] = useState([]);
-  const savedImage = localStorage.getItem('avatarImage');
-  const handleDeleteComent = (id) => {
-    const comments = JSON.parse(localStorage.getItem('comments'));
-
-    for (let i = 0; i < comments.length; i++) {
-      const commentsArray = comments[i].comments;
-
-      for (let j = 0; j < commentsArray.length; j++) {
-        const comment = commentsArray[j];
-
-        if (comment.commentId === id) {
-          commentsArray.splice(j, 1);
-          localStorage.setItem('comments', JSON.stringify(comments));
-          setComments(comments);
-          return;
-        }
-      }
+  const [isWarning, setIsWarning] = useState(false);
+  const handleDeleteComment = async (id) => {
+    try {
+      await dispatch(deleteComment(id));
+      await dispatch(commentsByFilmId(filmId));
+    } catch (error) {
+      console.error('Error deleting comment or fetching comments: ', error);
     }
   };
 
-  useEffect(() => {
-    const filmComments = comments.find((item) => item.id === filmId);
-    setThisComments(filmComments ? filmComments.comments : []);
-  }, [filmId, comments]);
-
-  useEffect(() => {
-    localStorage.setItem('comments', JSON.stringify(comments));
-  }, [comments]);
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event, form) => {
     event.preventDefault();
+    if (form.elements.text.value.length > 4) {
+      try {
+        const fields = {
+          login: authData.login,
+          text: form.elements.text.value,
+          ...(grade && { rating: grade }),
+          avatarUrl: authData.avatarUrl,
+          filmId: filmId,
+        };
 
-    if (event.target.text.value.length > 5) {
-      const newComment = {
-        name: userName ?? event.target.name.value,
-        commentId: uuidv4(),
-        userId: user && user.id ? user.id : 'incognito',
-        time: format(new Date(), 'dd.MM.yyyy HH:mm'),
-        text: event.target.text.value,
-        grade: grade,
-        avatar: savedImage != '' ? savedImage : ' ',
-      };
-      setComments(addComment(comments, filmId, newComment));
-      event.target.reset();
+        const { data } = await axios.post('/comments', fields);
+        dispatch(commentsByFilmId(filmId));
+        form.reset();
+      } catch (err) {
+        console.warn(err);
+        console.log('Ошибка при отправке комментария');
+      }
+    } else shakingWarning();
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit(event, event.target.form);
     }
   };
+
+  const shakingWarning = () => {
+    setIsWarning(true);
+    setTimeout(() => {
+      setIsWarning(false);
+    }, 400);
+  };
+
   return (
     <div className={styles.comments}>
       <div className={styles.commentsTitle}>{t('comments.comments title')}</div>
-      <div className={styles.commentsWarning}>
-        <img src="/images/icons/warning.png" alt="warning" />
-        {t('comments.warning')}
+      <div className={isWarning ? `${styles.commentsWarning} ${styles.active}` : `${styles.commentsWarning}`}>
+        <img src="./../images/icons/warning.png" alt="warning" />
+        {authData ? t('comments.warning') : t('comments.alternate warning')}
       </div>
-      <form className={styles.commentsForm} onSubmit={handleSubmit}>
-        <textarea
-          required
-          placeholder={t('comments.textholder')}
-          className={styles.commentsTextarea}
-          name="text"
-          cols="30"
-          rows="10"
-        ></textarea>
-        <div className={styles.commentsSubForm}>
-          {!currentUser ? (
-            <input
+      {authData && (
+        <>
+          <form
+            className={styles.commentsForm}
+            onSubmit={(event) => handleSubmit(event, event.target)}
+            onKeyPress={handleKeyPress}
+          >
+            <textarea
               required
-              placeholder={t('comments.nameholder')}
-              name="name"
-              type="text"
-              className={styles.commentsInput}
-            />
-          ) : (
-            ''
-          )}
-          <input value={t('comments.send')} type="submit" className={styles.commentsButton} />
-        </div>
-      </form>
+              placeholder={t('comments.textholder')}
+              className={styles.commentsTextarea}
+              name="text"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <div className={styles.commentsSubForm}>
+              <button type="submit" className={styles.commentsButton}>
+                {t('comments.send')}
+              </button>
+            </div>
+          </form>
+        </>
+      )}
+
       <div className={styles.commentsList}>
-        {thisComments &&
-          thisComments
+        {comments &&
+          comments
             .slice()
             .reverse()
             .map((comment, index) => (
@@ -102,7 +114,11 @@ const Comments = ({ filmId, grade }) => {
                 <div className={styles.commentsHead}>
                   <div className={styles.commentsUserInfo}>
                     <img
-                      src={comment.avatar != '' && comment.avatar != null ? comment.avatar : './../images/icons/user-placeholder.png'}
+                      src={
+                        comment.user.avatarUrl != '' && comment.user.avatarUrl != null
+                          ? comment.user.avatarUrl
+                          : './../images/icons/user-placeholder.png'
+                      }
                       onError={(e) => {
                         e.target.src = './../images/icons/user-placeholder.png';
                       }}
@@ -111,21 +127,21 @@ const Comments = ({ filmId, grade }) => {
                     />
                     <div className={styles.commentsInfo}>
                       <div className={styles.commentsName}>
-                        {comment.name}
-                        {comment.grade && (
+                        {comment.user.login}
+                        {comment.rating && (
                           <>
                             {' | '}
-                            <span>{comment.grade}</span>
-                            <img src="/images/AppRating/Full-rating.svg" alt="grade-image" />
+                            <span>{comment.rating}</span>
+                            <img src={ratingImg} alt="grade-image" />
                           </>
                         )}{' '}
                       </div>
-                      <div className={styles.commentsTime}>{comment.time}</div>
+                      <div className={styles.commentsTime}>{comment.createdAt}</div>
                     </div>
                   </div>
-                  {user && comment && user.id === comment.userId && (
-                    <button onClick={() => handleDeleteComent(comment.commentId)} className={styles.deleteComment}>
-                      <img src=".././images/icons/delete.svg" alt="delete" />
+                  {authData && authData._id === comment.user._id && (
+                    <button onClick={() => handleDeleteComment(comment._id)} className={styles.deleteComment}>
+                      <img src="./../images/icons/delete.svg" alt="delete" />
                     </button>
                   )}
                 </div>

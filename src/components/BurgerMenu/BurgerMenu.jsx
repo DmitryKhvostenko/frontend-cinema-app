@@ -1,24 +1,25 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import { useUser } from 'utils/UserProvider';
+import exit from './exit.svg';
 
 import styles from './BurgerMenu.module.scss';
 
 export default (props) => {
   const { t } = useTranslation();
-  const { handleCloseMenu, setIsPopup, userLogin, handleLeave } = props;
-  const { currentUser } = useUser();
+  const { handleCloseMenu, setIsPopup, handleLeave } = props;
+  const authData = useSelector((state) => state.auth.data);
 
   return (
     <Menu {...props}>
       <div className={styles.buttons}>
-        {currentUser ? (
+        {authData ? (
           <div className={styles.userWrapper}>
-            <NavLink className={styles.user} to="/profile">
-              {userLogin}
+            <NavLink onClick={() => handleCloseMenu()} className={styles.user} to="/profile">
+              {authData.login}
             </NavLink>
           </div>
         ) : (
@@ -39,26 +40,26 @@ export default (props) => {
       </div>
       <div className={styles.border}></div>
       <NavLink onClick={() => handleCloseMenu()} className="menu-item" to="/">
-        Home
+        {t('header.home')}
       </NavLink>
       <NavLink onClick={() => handleCloseMenu()} className="menu-item" to="/catalog">
-        Catalog
+        {t('header.catalog')}
       </NavLink>
       <NavLink
         onClick={() => handleCloseMenu()}
         className="menu-item"
         to={localStorage.getItem('lastFilm') ? `/movie/${localStorage.getItem('lastFilm')}` : '/catalog'}
       >
-        Film
+        {t('header.film')}
       </NavLink>
-      <NavLink onClick={() => handleCloseMenu()} className="menu-item" to="/about">
-        About us
+      <NavLink onClick={() => handleCloseMenu()} className="menu-item" to="/placeholder">
+        {t('header.about')}
       </NavLink>
 
-      {currentUser && (
+      {authData && (
         <button onClick={handleLeave} className={styles.exit}>
           <div className={styles.exitWrapper}>
-            <img src="./../images/icons/exit.svg" alt="exit" />
+            <img src={exit} alt="exit" />
           </div>
         </button>
       )}

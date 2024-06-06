@@ -32,20 +32,23 @@
 .text {
   margin: 0 auto 30px;
   max-width: 900px;
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5em;
   line-height: 1.5em;
 }
 
 .button {
+  display: inline-block;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   border: none;
   border-radius: 999px;
-  background-color: #f7c600;
+  background-color: var(--button-bg);
   padding: 14px 40px 17px;
+  color: #000;
   font-weight: 700;
   font-size: 1.5em;
+  text-decoration: none;
   &:hover {
     transform: scale(0.95);
   }

@@ -1,22 +1,25 @@
 import { memo, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import disableScroll from 'disable-scroll';
-
-import HeaderScrolling from 'utils/HeaderScrolling';
-import { useUser } from 'utils/UserProvider';
 import BurgerMenu from 'components/BurgerMenu/BurgerMenu';
 import FindFilms from 'components/FindFilms/FindFilms';
 import PopUpLogin from 'components/PopUpLogin/PopUpLogin';
+import disableScroll from 'disable-scroll';
+import HeaderScrolling from 'utils/HeaderScrolling';
 
+import { logout, selectIsAuth } from '../../redux/slices/auth';
+
+import exit from './exit.svg';
 import logo from './logo.svg';
 
 import styles from './Header.module.scss';
 
 const Header = ({ t }) => {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+  const authData = useSelector((state) => state.auth.data);
   const scrolling = HeaderScrolling();
-  const { currentUser, setCurrentUser } = useUser();
   const navigate = useNavigate();
-  const userLogin = Object.keys(currentUser)[0] ?? Object.keys(currentUser)[0];
   const [isPopup, setIsPopup] = useState(false);
   const [isBurger, setIsBurger] = useState(false);
   const handleCloseMenu = () => {
@@ -27,11 +30,13 @@ const Header = ({ t }) => {
   };
 
   const handleLeave = () => {
-    localStorage.setItem('currentUser', '');
-    localStorage.setItem('avatarImage', '');
-    navigate('/');
-    setCurrentUser('');
+    if (window.confirm('Are you sure you want to leave?')) {
+      dispatch(logout());
+      window.localStorage.removeItem('token');
+      navigate('/');
+    }
   };
+
   useEffect(() => {
     isPopup == true || isBurger == true ? disableScroll.on() : disableScroll.off();
   }, [isPopup, isBurger]);
@@ -59,14 +64,14 @@ const Header = ({ t }) => {
               <NavLink to="/placeholder">{t('header.about')}</NavLink>
             </nav>
             <div className={styles.border}></div>
-            {currentUser ? (
+            {isAuth ? (
               <div className={styles.userWrapper}>
                 <NavLink className={styles.user} to="/profile">
-                  {userLogin}
+                  {authData.login}
                 </NavLink>
                 <div className={styles.border}></div>
                 <button onClick={handleLeave} className={styles.exit}>
-                  <img src="./../images/icons/exit.svg" alt="exit" />
+                  <img src={exit} alt="exit" />
                 </button>
               </div>
             ) : (
@@ -85,7 +90,7 @@ const Header = ({ t }) => {
               </div>
             )}
           </div>
-          <button className={styles.burgerButton}>
+          <div className={styles.burgerButton}>
             <BurgerMenu
               isOpen={isBurger}
               onOpen={() => {
@@ -98,13 +103,12 @@ const Header = ({ t }) => {
               onStateChange={handleStateChange}
               handleCloseMenu={handleCloseMenu}
               setIsPopup={() => setIsPopup(true)}
-              userLogin={userLogin}
               handleLeave={handleLeave}
             />
-          </button>
+          </div>
         </div>
       </header>
-      <PopUpLogin isOpen={isPopup} onClose={() => setIsPopup(false)} />
+      {isPopup && <PopUpLogin isOpen={isPopup} onClose={() => setIsPopup(false)} />}
     </>
   );
 };

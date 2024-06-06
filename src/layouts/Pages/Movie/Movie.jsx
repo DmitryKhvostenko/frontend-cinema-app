@@ -1,14 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ReactPlayer from 'react-player';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-
-import GenreMap from 'utils/GenreMap';
-import sortFilms from 'utils/SortedCatalog';
+import movies from 'backend/Movies.json';
 import Comments from 'components/Comments/Comments';
 import StarRating from 'components/StarRating/StarRating';
-
-import movies from 'backend/Movies.json';
+import GenreMap from 'utils/GenreMap';
+import sortFilms from 'utils/SortedCatalog';
 
 import styles from './Movie.module.scss';
 
@@ -18,6 +16,8 @@ const Movie = ({ t }) => {
   const [alsoMovies, setAlsoMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
   const [grade, setGrade] = useState();
+  const [playerStart, setPlayerStart] = useState(false);
+  const playerRef = useRef(null);
 
   const { i18n } = useTranslation();
   const validLanguages = ['en', 'ua'];
@@ -31,6 +31,8 @@ const Movie = ({ t }) => {
 
   useEffect(() => {
     localStorage.setItem('lastFilm', id);
+    setPlayerStart(false);
+    playerRef.current.seekTo(0, 'seconds');
   }, [id]);
 
   useEffect(() => {
@@ -42,10 +44,7 @@ const Movie = ({ t }) => {
     setMovie(movies.find((movie) => movie.ImdbId === id));
   }, [id]);
 
-  const [playerStart, setPlayerStart] = useState(false);
-
   const formatTime = (minutes) => {
-    console.log(i18n.language);
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
     return i18n.language === 'ua' ? `${hours}год ${remainingMinutes}хв` : `${hours}h ${remainingMinutes}min`;
@@ -77,7 +76,7 @@ const Movie = ({ t }) => {
                 <div className={styles.ratingList}>
                   <div className={styles.ratingItem}>
                     <div className={styles.ratingCount}>
-                      <img src="/images/icons/IMDB.svg" alt="IMDB" />
+                      <img src="./../images/icons/IMDB.svg" alt="IMDB" />
                       <div>{movie.ratingValue == '' ? 0 : movie.ratingValue}</div>
                     </div>
                     <div className={styles.ratingPlatform}>IMDB</div>
@@ -139,11 +138,12 @@ const Movie = ({ t }) => {
               </button>
               <div className={styles.filmPlayer}>
                 {!playerStart && (
-                  <div className={styles.filmPlayerPrev}>
-                    <img onClick={() => setPlayerStart(true)} src="/images/icons/play-button.svg" alt="play" />
+                  <div onClick={() => setPlayerStart(true)} className={styles.filmPlayerPrev}>
+                    <img src="./../images/icons/play-button.svg" alt="play" />
                   </div>
                 )}
                 <ReactPlayer
+                  ref={playerRef}
                   className={styles.reactPlayer}
                   playing={playerStart}
                   controls={true}
@@ -151,6 +151,8 @@ const Movie = ({ t }) => {
                   light={false}
                   width={'100%'}
                   height={''}
+                  onReady={() => setPlayerStart(false)}
+                  stopOnUnmount={true}
                 />
               </div>
               <div className={styles.filmRating}>
@@ -171,7 +173,7 @@ const Movie = ({ t }) => {
                 () => (
                   <Comments filmId={id} grade={grade !== movie.ratingValue ? grade : ''} t={t} />
                 ),
-                [grade]
+                [id, grade]
               )}
             </div>
           </div>

@@ -1,6 +1,6 @@
 .error {
   flex: 1 1 auto;
-  background-color: #3f3f3f;
+  background-color: var(--bg-color);
   padding-top: 100px;
 }
 
@@ -12,36 +12,36 @@
 }
 
 .title {
-  color: #fff;
+  color: var(--white-color);
   font-size: 4em;
 }
 .text {
   margin-bottom: 50px;
-  color: #fff;
+  color: var(--white-color);
   font-size: 1.5em;
 }
 .image {
   width: 200px;
 }
 .button {
-  max-width: fit-content;
   display: block;
-  margin: 0 auto 70px;
   transition: all 0.3s ease 0s;
   cursor: pointer;
-  border-radius: 20px;
-  background: #ff9800;
+  margin: 0 auto 70px;
+  border-radius: 10px;
+  background: var(--button-bg);
   padding: 10px 20px;
+  max-width: fit-content;
   height: 100%;
-  color: #fff !important;
+  color: var(--white-color) !important;
   font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.06em;
   text-align: center;
-  text-transform: uppercase;
   text-decoration: none;
+  text-transform: uppercase;
   &:hover {
-    background-color: #ff8000;
+    background-color: var(--hover-color);
   }
 }
 

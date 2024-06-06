@@ -26,7 +26,7 @@
   & button {
     cursor: pointer;
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--white-grey-color);
     font-weight: 600;
     text-decoration: none;
     &:hover {
@@ -39,11 +39,11 @@
     &:nth-child(2) {
       transition: all 0.3s ease 0s;
       border-radius: 4px;
-      background-color: #e5a00d;
+      background-color: var(--button-bg);
       padding: 4px 16px;
       color: #000;
       &:hover {
-        background-color: #e6aa28;
+        background-color: var(--hover-color);
       }
     }
   }

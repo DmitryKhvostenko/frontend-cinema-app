@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import styles from './AppRating.module.scss';
 const AppRating = () => {
@@ -7,24 +8,24 @@ const AppRating = () => {
     <div className={styles.main}>
       <div className={styles.item}>
         <div className={styles.itemTitle}>
-          <img src="./images/AppRating/android-icon.svg" alt="android icon" />
+          <img src={`${process.env.PUBLIC_URL}/images/AppRating/android-icon.svg`} alt="android icon" />
           Play Store
         </div>
         <div className={styles.itemStars}>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/half-rating.svg" alt="half star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/half-rating.svg`} alt="half star" />
           </div>
         </div>
         <div className={styles.itemRating}>
@@ -33,24 +34,24 @@ const AppRating = () => {
       </div>
       <div className={styles.item}>
         <div className={styles.itemTitle}>
-          <img src="./images/AppRating/ios-icon.svg" alt="android icon" />
+          <img src={`${process.env.PUBLIC_URL}/images/AppRating/ios-icon.svg`} alt="android icon" />
           App Store
         </div>
         <div className={styles.itemStars}>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/half-rating.svg" alt="half star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/half-rating.svg`} alt="half star" />
           </div>
         </div>
         <div className={styles.itemRating}>
@@ -59,24 +60,24 @@ const AppRating = () => {
       </div>
       <div className={styles.item}>
         <div className={styles.itemTitle}>
-          <img src="./images/AppRating/rocu-icon.svg" alt="rocu icon" />
+          <img src={`${process.env.PUBLIC_URL}/images/AppRating/rocu-icon.svg`} alt="rocu icon" />
           Play Store
         </div>
         <div className={styles.itemStars}>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/full-rating.svg" alt="full star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/full-rating.svg`} alt="full star" />
           </div>
           <div className={styles.ratingStar}>
-            <img src="./images/AppRating/no-rating.svg" alt="half star" />
+            <img src={`${process.env.PUBLIC_URL}/images/AppRating/no-rating.svg`} alt="half star" />
           </div>
         </div>
         <div className={styles.itemRating}>
@@ -85,12 +86,12 @@ const AppRating = () => {
       </div>
       <div className={styles.item}>
         <div className={styles.downloadTitle}>{t('rating.download')}</div>
-        <a href="/#" className={styles.downloadButton}>
-          <img src="./images/AppRating/badge-google-play.png" alt="download button" />
-        </a>
-        <a href="/#" className={styles.downloadButton}>
-          <img src="./images/AppRating/badge-app-store.png" alt="download button" />
-        </a>
+        <Link to="/placeholder" className={styles.downloadButton}>
+          <img src={`${process.env.PUBLIC_URL}/images/AppRating/badge-google-play.png`} alt="download button" />
+        </Link>
+        <Link to="/placeholder" className={styles.downloadButton}>
+          <img src={`${process.env.PUBLIC_URL}/images/AppRating/badge-app-store.png`} alt="download button" />
+        </Link>
       </div>
     </div>
   );

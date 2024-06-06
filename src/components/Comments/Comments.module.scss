@@ -1,22 +1,21 @@
 .comments {
   &Title {
     margin-bottom: 10px;
-    color: #eee;
+    color: var(--white-grey-color);
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     text-transform: uppercase;
   }
   &Warning {
     display: flex;
     column-gap: 10px;
     align-items: center;
-    color: #929294;
+    color: var(--grey-color);
     & img {
       width: 20px;
     }
-
-    &.active {
-      color: red;
+    &.active img {
+      animation: warning 0.4s alternate;
     }
   }
   &Form {
@@ -40,9 +39,9 @@
   &Textarea,
   &Input {
     outline: transparent;
-    background: #262628;
+    background: var(--input-bg);
     width: 100%;
-    color: #fff;
+    color: var(--white-color);
   }
   &Input {
     padding-left: 20px;
@@ -53,12 +52,15 @@
     border-radius: 4px;
     height: 100%;
     &:hover {
-      background-color: #ff8000;
+      background-color: var(--hover-color);
     }
+  }
+  &List {
+    margin-top: 20px;
   }
   &Item {
     margin-bottom: 20px;
-    color: #eee;
+    color: var(--white-grey-color);
   }
   &Image {
     border-radius: 100%;
@@ -74,7 +76,7 @@
     display: flex;
     column-gap: 10px;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   &Name {
     margin-bottom: 4px;
@@ -88,13 +90,14 @@
     }
   }
   &Time {
-    color: #808097;
+    color: var(--grey-color);
   }
   &Button {
     cursor: pointer;
-    background: #ff9800;
+    background: var(--button-bg);
     padding: 10px 20px;
-    color: #fff;
+    min-width: 168px;
+    color: var(--white-color);
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 0.06em;
@@ -105,10 +108,19 @@
 
 @keyframes warning {
   0% {
-    transform: translateX(-3px);
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
   }
   100% {
-    transform: translateX(3px);
+    transform: rotate(0deg);
   }
 }
 
@@ -118,5 +130,16 @@
   width: 40px;
   & img {
     width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .commentsButton {
+    padding: 5px 10px;
+    min-width: auto;
+    font-size: 13px;
+  }
+  .commentsSubForm {
+    column-gap: 7px;
   }
 }

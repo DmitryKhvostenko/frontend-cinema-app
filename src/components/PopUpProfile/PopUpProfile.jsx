@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useUser } from 'utils/UserProvider';
+import { updateProfile } from '../../redux/slices/auth';
 
 import closeImg from './close.svg';
 
 import styles from './PopUpProfile.module.scss';
 
-const PopUpProfile = ({ isOpen, onClose, currentUser }) => {
+const PopUpProfile = ({ isOpen, onClose }) => {
+  const dispatch = useDispatch();
+  const authData = useSelector((state) => state.auth.data);
   const { t } = useTranslation();
 
   const profileContentRef = useRef(null);
   const [name, setName] = useState('');
-  const comments = JSON.parse(localStorage.getItem('comments'));
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-  const { setCurrentUser } = useUser();
 
   useEffect(() => {
     let timeoutId;
@@ -37,46 +37,10 @@ const PopUpProfile = ({ isOpen, onClose, currentUser }) => {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    updateNameInLocalStorage(currentUser.id, name);
-    updateCommentsName(name);
+    dispatch(updateProfile({ id: authData._id, login: name }));
     onClose();
-  };
-
-  const updateCommentsName = (newName) => {
-    const updatedComments = comments.map((comment) => {
-      if (comment.comments) {
-        comment.comments = comment.comments.map((commentItem) => {
-          if (commentItem.userId === currentUser.id) {
-            commentItem.name = newName;
-          }
-          return commentItem;
-        });
-      }
-      return comment;
-    });
-    localStorage.setItem('comments', JSON.stringify(updatedComments));
-  };
-
-  const updateNameInLocalStorage = (userId, newName) => {
-    const updatedUsers = users.map((userObj) => {
-      const username = Object.keys(userObj)[0];
-      if (userObj[username].id === userId) {
-        const updatedUser = {
-          [newName]: {
-            ...userObj[username],
-            id: userId,
-            login: newName,
-          },
-        };
-        delete updatedUser[username];
-        setCurrentUser(updatedUser);
-        return updatedUser;
-      }
-      return userObj;
-    });
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
   };
 
   return (
@@ -102,6 +66,8 @@ const PopUpProfile = ({ isOpen, onClose, currentUser }) => {
                   <input
                     name="name"
                     value={name}
+                    minLength="3"
+                    maxLength="15"
                     placeholder={t('profile.edit.placeholderName')}
                     onChange={(e) => {
                       setName(e.target.value);

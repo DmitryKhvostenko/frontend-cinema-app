@@ -1,20 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate, useNavigate } from 'react-router-dom';
 
-import { useUser } from 'utils/UserProvider';
+import { fetchAuth, selectIsAuth } from '../../redux/slices/auth';
 
 import closeImg from './close.svg';
+import eye from './eye.svg';
+import eyeSlash from './eye-slash.svg';
 
 import styles from './PopUpLogin.module.scss';
 
 const PopUpLogin = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+  const isAuth = useSelector(selectIsAuth);
+  const dispatch = useDispatch();
   const { t } = useTranslation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('testEmail1@gmail.com');
+  const [password, setPassword] = useState('123123123wW');
   const [isUserDumb, setIsUserDumb] = useState(false);
-  const usersArray = JSON.parse(localStorage.getItem('users'));
-  const { setCurrentUser } = useUser();
   const signInContentRef = useRef(null);
+  const [isVisiblePassword, setisVisiblePassword] = useState(false);
+
+  const togglePasswordVisible = () => {
+    setisVisiblePassword(!isVisiblePassword);
+  };
 
   useEffect(() => {
     let timeoutId;
@@ -38,24 +48,27 @@ const PopUpLogin = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = usersArray.find((userObject) => {
-      const userData = Object.values(userObject)[0];
-      return userData.email === email;
-    });
-
-    if (user && password === Object.values(user)[0].password) {
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      setCurrentUser(user);
-      setEmail('');
-      setPassword('');
-      onClose();
-      setIsUserDumb(false);
-    } else {
-      setIsUserDumb(true);
-    }
+    if (email && password) {
+      const values = {
+        email: email,
+        password: password,
+      };
+      const data = await dispatch(fetchAuth(values));
+      if (!data.payload) {
+        return alert('Failed to login!');
+      }
+      if ('token' in data.payload) {
+        window.localStorage.setItem('token', data.payload.token);
+      }
+    } else setIsUserDumb(true);
   };
+
+  if (isAuth) {
+    onClose();
+    return <Navigate to="/" />;
+  }
   return (
     <>
       {isOpen && (
@@ -84,22 +97,27 @@ const PopUpLogin = ({ isOpen, onClose }) => {
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
-                    type="text"
+                    type="email"
                     className={styles.signInInput}
                   />
                 </div>
                 <div className={styles.signInBlock}>
                   <div className={styles.signInText}>{t('signIn.password')}</div>
-                  <input
-                    name="password"
-                    value={password}
-                    placeholder={t('signIn.placeholderPassword')}
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                    type="password"
-                    className={styles.signInInput}
-                  />
+                  <div className={styles.signInWrapper}>
+                    <input
+                      name="password"
+                      value={password}
+                      placeholder={t('signIn.placeholderPassword')}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
+                      type={!isVisiblePassword ? 'password' : 'text'}
+                      className={styles.signInInput}
+                    />
+                    <div onClick={togglePasswordVisible} className={styles.signInEye}>
+                      <img src={!isVisiblePassword ? eye : eyeSlash} alt="hide password" />
+                    </div>
+                  </div>
                 </div>
                 <input type="submit" value={t('signIn.confirm')} name="submit" className={styles.signInButton} />
                 {isUserDumb && (

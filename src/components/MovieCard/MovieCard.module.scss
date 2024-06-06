@@ -5,7 +5,7 @@
 
 .item {
   max-width: 150px;
-  color: #fff;
+  color: var(--white-color);
   font-weight: 600;
   & div {
     line-height: 150%;

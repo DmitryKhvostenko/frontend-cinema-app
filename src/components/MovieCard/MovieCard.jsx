@@ -1,10 +1,15 @@
 import { NavLink } from 'react-router-dom';
-
+import i18n from '18n';
+import GenreMap from 'utils/GenreMap';
 import handleError from 'utils/ImagePlaceholder';
 
 import styles from './MovieCard.module.scss';
 
 const MovieCard = (props) => {
+  const validLanguages = ['en', 'ua'];
+  const language = validLanguages.includes(i18n.language) ? i18n.language : 'en';
+  const MovieGenres = () => <span>{props.genre.map((genre) => GenreMap[language][genre.trim()]).join(', ')}</span>;
+
   return (
     <NavLink to={`/movie/${props.id}`} className={styles.link}>
       <li className={styles.item}>
@@ -23,7 +28,7 @@ const MovieCard = (props) => {
                 )}
               </div>
             </div>
-            <div>{props.genre.join(',')}</div>
+            <div>{<MovieGenres />}</div>
           </div>
         </div>
       </li>
