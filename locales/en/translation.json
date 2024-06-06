@@ -1,0 +1,156 @@
+{
+  "language": "Language",
+  "company": "Company",
+  "about": "About",
+  "careers": "Careers",
+  "our culture": "Our Culture",
+  "giving": "Giving",
+  "partners": "Partners",
+  "press room": "Press Room",
+  "elex gear": "Elex Gear",
+  "the elex blog": "The Elex Blog",
+  "elex pass": "Elex Pass",
+  "go premium": "Go Premium",
+  "elexamp": "Elexamp",
+  "elex labs": "Elex Labs",
+  "get perks": "Get Perks",
+  "downloads": "Downloads",
+  "elex media server": "Elex Media Server",
+  "apps & devices": "Apps & Devices",
+  "where to watch": "Where to Watch",
+  "support": "Support",
+  "finding help": "Finding Help",
+  "support library": "Support Library",
+  "community forums": "Community Forums",
+  "billing questions": "Billing Questions",
+  "status": "Status",
+  "bug bounty": "Bug Bounty",
+  "cordcutter": "CordCutter",
+  "get in touch": "Get in Touch",
+  "watch free": "Watch Free",
+  "tv channel finder": "TV Channel Finder",
+  "what to watch": "What to Watch",
+  "what to watch on hulu": "What To Watch on Hulu",
+  "a24 collection": "A24 Collection",
+  "footer": {
+    "privacy & legal": "Privacy & Legal",
+    "accessibility": "Accessibility",
+    "manage cookies": "Manage Cookies",
+    "language": "Language",
+    "copyright": "Copyright"
+  },
+  "movie": {
+    "release date": "Release date",
+    "runtime": "Runtime",
+    "genres": "Genres",
+    "rating": "Rating",
+    "watch trailer": "Watch trailer",
+    "director": "Director",
+    "actors": "Actors",
+    "popular": "Popular",
+    "watch online movie": "Watch online movie",
+    "for free": "for free",
+    "watch online": "Watch online",
+    "rate": "Rate",
+    "the film": "the film",
+    "see also": "See also",
+    "only the best premieres": "Only the best premieres!"
+  },
+  "comments": {
+    "comments title": "Comments",
+    "warning": "The minimum comment length is 5 characters. Respect yourself and others!",
+    "alternate warning": "Only registered users can leave comments!",
+    "textholder": "Write a review",
+    "nameholder": "Your name",
+    "send": "Send review"
+  },
+  "catalog": {
+    "filter by": "Filter by",
+    "sort dropdown": "Sort by",
+    "filter dropdown": "Filter",
+    "filter year": "Year",
+    "filter genre": "Genre",
+    "sort bestRating": "Best rating",
+    "sort worstRating": "Worst rating",
+    "sort mostPopular": "The most popular",
+    "sort leastPopular": "The least popular"
+  },
+  "profile": {
+    "profile": "My Profile",
+    "registered": "Registered",
+    "editButton": "Edit",
+    "comments": "Comments",
+    "no comments": "Not comments",
+    "edit": {
+      "title": "Edit",
+      "name": "Name",
+      "placeholderName": "Enter new name",
+      "confirm": "Confirm"
+    }
+  },
+  "avatar": {
+    "choose": "Choose your image"
+  },
+  "signIn": {
+    "title": "Sign In",
+    "email": "Email",
+    "placeholderEmail": "Enter email",
+    "password": "Password",
+    "placeholderPassword": "Enter Password",
+    "confirm": "Sign In",
+    "error1": "Authorisation Error!",
+    "error2": "Make sure your email and password are correct"
+  },
+  "header": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "film": "Film",
+    "about": "About us",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "findFilms": {
+    "placeholder": "Find Movies & TV"
+  },
+  "registration": {
+    "title": "Registration",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "confirm password": "Confirm password",
+    "send": "Send",
+    "tip": "Password: at least 8 characters, one digit, one lowercase, one uppercase"
+  },
+  "home": {
+    "title": "Meet your TV concierge",
+    "text": "Need something to watch? We’re on it. Elex combines free movies & TV with your favorite streaming services, so there’s always more to discover",
+    "button": "Start Watching"
+  },
+  "carousel": {
+    "rentals": "Rentals",
+    "movies_shows": "Movies & Shows",
+    "live_tv": "Live TV",
+    "discover": "Discover",
+    "your_media": "Your Media",
+    "your_music": "Your Music",
+    "title": "Ready. Set. Rent.",
+    "subTitle": "Starting from $3.99, rent everything from the latest blockbusters to all-time favorites.",
+    "buttonLabel": "Shop Rentals"
+  },
+  "rating": {
+    "ratings": "ratings",
+    "download": "Download Now"
+  },
+  "placeholder": {
+    "title": "Oops, no movies here, but we have cats",
+    "text1": "Hello, dear viewer",
+    "text2": "You've landed on a page that isn't ready yet.  I prioritized diving deeper into React technologies, so this page is still a work in progress. 🤷‍♂️ So, instead of content, here are some cats for you",
+    "text3": "Enjoy them while I figure out what to do here",
+    "text4": "And remember, cats always save the day"
+  },
+  "error": {
+    "title": "Oops! Page Not Found",
+    "text": "Sorry, the page you are looking for does not exist. Please check the URL or return to the homepage",
+    "button": "Go to Home"
+  }
+}
