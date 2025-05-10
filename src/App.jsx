@@ -12,7 +12,7 @@ import Home from './layouts/Pages/Home/Home';
 import Movie from './layouts/Pages/Movie/Movie';
 import Profile from './layouts/Pages/Profile/Profile';
 import Registration from './layouts/Pages/Registration/Registration';
-import { fetchAuthMe, selectIsAuth } from './redux/slices/auth';
+import { fetchAuthMe } from './redux/slices/auth';
 import ScrollToTop from './utils/ScrollToTop';
 
 import module from './App.module.scss';
@@ -26,7 +26,7 @@ const App = () => {
   }, []);
   return (
     <div className={module.layout}>
-      <Router basename="/frontend-cinema-app">
+      <Router>
         <ScrollToTop />
         <Header t={t} />
         <Routes>
