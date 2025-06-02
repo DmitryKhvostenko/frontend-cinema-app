@@ -4717,9 +4717,10 @@
     "url": "https://www.youtube.com/watch?v=AlM7oD7Ms3E",
     "year": "2020",
     "certificate": "",
-    "summary_text": "Abandoned at birth, brave and loyal Karna grows up to acquire skills as a warrior to battle the Pandavas.",
-    "ratingCount": "690",
-    "director": { "name": "N.T. Rama Rao", "name_id": "nm0004417" },
+    "runtime": "114",
+    "genre": ["Comedy", " Crime", " Thriller"],
+    "ratingValue": "8.8",
+    "summary_text": "In 2006, a group of robbers carried out one of the most famous and ingenious bank heists in Argentina’s history by infiltrating the Banco Río branch in Acassuso. They took hostages, but the real goal was to loot the vaults via a tunnel they had dug in advance.",
     "ratingCount": "6900",
     "director": { "name": "Ariel Winograd", "name_id": "" },
     "cast": [
