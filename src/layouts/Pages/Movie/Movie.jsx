@@ -147,7 +147,7 @@ const Movie = ({ t }) => {
                   className={styles.reactPlayer}
                   playing={playerStart}
                   controls={true}
-                  url="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                  url={movie.url || 'https://www.youtube.com/watch?v=NpEaa2P7qZI&ab_channel=TristanBrehaut'}
                   light={false}
                   width={'100%'}
                   height={''}

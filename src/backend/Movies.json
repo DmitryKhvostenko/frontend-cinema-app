@@ -538,25 +538,26 @@
     ]
   },
   {
-    "ImdbId": "tt10681878",
-    "_id": "tt10681878",
-    "name": "Wife, i",
-    "poster_url": "https://cdn11.bigcommerce.com/s-yzgoj/images/stencil/1280x1280/products/382501/4584686/apid9ifzf__90583.1625663598.jpg?c=2",
-    "year": "I) (2019",
-    "certificate": "",
-    "runtime": "125",
-    "genre": ["Comedy", " Romance", " Thriller"],
-    "ratingValue": "8.7",
-    "summary_text": "Add a Plot",
-    "ratingCount": "868",
-    "director": { "name": "Gssp Kalyan", "name_id": "nm8172571" },
-    "cast": [
-      { "name": "Surya Akondi", "name_id": "nm10857415" },
-      { "name": "Gunjann Aras", "name_id": "nm11320205" },
-      { "name": "Mozammel Hoshen Chowdhury", "name_id": "nm12657113" },
-      { "name": "Fida Gill", "name_id": "nm10857414" }
-    ]
-  },
+  "ImdbId": "tt0139414",
+  "_id": "tt0139414",
+  "name": "Lake Placid",
+  "poster_url": "https://upload.wikimedia.org/wikipedia/en/e/e6/Lake_placid_ver2.jpg",
+  "url": "https://www.youtube.com/watch?v=YknwhbDZKoY&ab_channel=UMSFILMUKRAINE",
+  "year": "1999",
+  "certificate": "R",
+  "runtime": "82",
+  "genre": ["Horror", "Comedy", "Thriller"],
+  "ratingValue": "8.7",
+  "summary_text": "Three people attempt to stop a giant crocodile, who is terrorizing residents in Black Lake, Maine.",
+  "ratingCount": "56,287",
+  "director": { "name": "Steve Miner", "name_id": "nm0591380" },
+  "cast": [
+    { "name": "Bill Pullman", "name_id": "nm0000597" },
+    { "name": "Bridget Fonda", "name_id": "nm0000403" },
+    { "name": "Oliver Platt", "name_id": "nm0001624" },
+    { "name": "Brendan Gleeson", "name_id": "nm0322407" }
+  ]
+},
   {
     "ImdbId": "tt1582604",
     "_id": "tt1582604",
@@ -1630,25 +1631,26 @@
     ]
   },
   {
-    "ImdbId": "tt0079889",
-    "_id": "tt0079889",
-    "name": "Sankarabharanam",
-    "poster_url": "https://m.media-amazon.com/images/M/MV5BYTY2M2RhZjAtZDg5MC00MzRhLTg3MmMtOWUxZWYwNDM3NTNhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    "year": "1980",
-    "certificate": "Not Rated",
-    "runtime": "143",
-    "genre": ["Drama", " Music", " Romance"],
-    "ratingValue": "8.7",
-    "summary_text": "The story of a rare and exceptional bond between the master of classical music Sankara Sastry and his admirer Tulasi, a woman from a family of prostitutes.",
-    "ratingCount": "2,108",
-    "director": { "name": "K. Viswanath", "name_id": "nm0899649" },
-    "cast": [
-      { "name": "J.V. Somayajulu", "name_id": "nm0004468" },
-      { "name": "Manju Bhargavi", "name_id": "nm0080261" },
-      { "name": "Tulasi", "name_id": "nm0876310" },
-      { "name": "Allu Ramalingaiah", "name_id": "nm0707972" }
-    ]
-  },
+  "ImdbId": "tt21824316",
+  "_id": "tt21824316",
+  "name": "The Fall of America",
+  "poster_url": "https://m.media-amazon.com/images/M/MV5BODJkY2VhMjAtZWI1OS00YzdlLWFiMTMtOWRmOTEzYmVmMmUwXkEyXkFqcGc@._V1_.jpg",
+  "url": "https://www.youtube.com/watch?v=G6UyjR1pQ0g&ab_channel=UMSFILMUKRAINE",
+  "year": "2022",
+  "certificate": "Not Rated",
+  "runtime": "90",
+  "genre": ["Action", " Drama"],
+  "ratingValue": "8.6",
+  "summary_text": "A gripping political documentary that explores the social, cultural, and economic challenges that signal the decline of American hegemony.",
+  "ratingCount": "1,024",
+  "director": { "name": "Igor Lopatonok", "name_id": "nm5123634" },
+  "cast": [
+    { "name": "Oliver Stone", "name_id": "nm0000231" },
+    { "name": "Vladimir Putin", "name_id": "nm0707542" },
+    { "name": "Edward Snowden", "name_id": "nm6353425" },
+    { "name": "Tucker Carlson", "name_id": "nm1384724" }
+  ]
+},
   {
     "ImdbId": "tt7981438",
     "_id": "tt7981438",
@@ -1989,25 +1991,34 @@
     ]
   },
   {
-    "ImdbId": "tt0086231",
-    "_id": "tt0086231",
-    "name": "Sagara Sangamam",
-    "poster_url": "https://m.media-amazon.com/images/M/MV5BNDkzMjBlNzgtNDg3Mi00YjIwLTg5YWUtMDc4MjY4ZWJlMDI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    "year": "1983",
-    "certificate": "",
-    "runtime": "160",
-    "genre": ["Drama", " Music", " Romance"],
+    "ImdbId": "tt5737536",
+    "_id": "tt5737536",
+    "name": "Future World",
+    "poster_url": "https://m.media-amazon.com/images/M/MV5BMWUwMjg4MjgtMmZmZi00NTQzLWFlNzQtOWRiMmVkNTRkNGJhXkEyXkFqcGc@._V1_.jpg",
+    "url": "https://www.youtube.com/watch?v=TtPMpIhKkCA&ab_channel=UMSFILMUKRAINE",
+    "year": "2018",
+    "certificate": "R",
+    "runtime": "90",
+    "genre": ["Action", " Mystery"],
     "ratingValue": "8.8",
-    "summary_text": "A classical dancer, Balakrishna, (Kamal Haasan) faces many struggles, but is eventually redeemed.",
-    "ratingCount": "3,040",
-    "director": { "name": "K. Viswanath", "name_id": "nm0899649" },
+    "summary_text": "In a post-apocalyptic world, a young prince from the Oasis embarks on a perilous journey across the barren wastelands to find a near-mythical medicine to save his dying mother, the Queen. Along the way, he encounters violent raiders, a robotic assassin named Ash, and the ruthless Druglord, leading to an epic battle to save the remnants of humanity.",
+    "ratingCount": "4,225",
+    "director": {
+      "name": "James Franco",
+      "name_id": "nm0290556"
+    },
     "cast": [
-      { "name": "Kamal Haasan", "name_id": "nm0352032" },
-      { "name": "Jaya Prada", "name_id": "nm0419685" },
-      { "name": "Sarath Babu", "name_id": "nm0764871" },
-      { "name": "Sailaja S.P.", "name_id": "nm0004465" }
+      { "name": "James Franco", "name_id": "nm0290556" },
+      { "name": "Suki Waterhouse", "name_id": "nm5281990" },
+      { "name": "Jeffrey Wahlberg", "name_id": "nm6823016" },
+      { "name": "Margarita Levieva", "name_id": "nm1682689" },
+      { "name": "Snoop Dogg", "name_id": "nm0004879" },
+      { "name": "Method Man", "name_id": "nm0587027" },
+      { "name": "Lucy Liu", "name_id": "nm0005154" },
+      { "name": "Milla Jovovich", "name_id": "nm0000170" }
     ]
   },
+
   {
     "ImdbId": "tt0187178",
     "_id": "tt0187178",
@@ -2250,25 +2261,26 @@
     ]
   },
   {
-    "ImdbId": "tt1601792",
-    "_id": "tt1601792",
-    "name": "Aa Naluguru",
-    "poster_url": "https://m.media-amazon.com/images/M/MV5BNGQ2YTg2MzMtMjRjMC00ZDEyLTk5ODAtZDk5NTdmMjgzMGJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    "year": "2004",
-    "certificate": "",
-    "runtime": "141",
-    "genre": ["Drama"],
-    "ratingValue": "8.6",
-    "summary_text": "A man fights for his philosophy: that human relations are more important than money.",
-    "ratingCount": "3,029",
-    "director": { "name": "Chandra Siddhartha", "name_id": "nm2485654" },
-    "cast": [
-      { "name": "Rajendra Prasad", "name_id": "nm0707399" },
-      { "name": "Aamani", "name_id": "nm0007404" },
-      { "name": "Raja", "name_id": "nm2190556" },
-      { "name": "Raghu Babu", "name_id": "nm1298052" }
-    ]
-  },
+  "ImdbId": "tt10011320",
+  "_id": "tt10011320",
+  "name": "Paranormal Prison",
+  "poster_url": "https://m.media-amazon.com/images/M/MV5BODc1ODhhZGEtNDMzYS00NmNkLWEzZDktYzNjOTc2NjkwMDZkXkEyXkFqcGc@._V1_.jpg",
+  "url": "https://www.youtube.com/watch?v=ft3nU2wB6kA&ab_channel=UMSFILMUKRAINE",
+  "year": "2021",
+  "certificate": "Not Rated",
+  "runtime": "70",
+  "genre": ["Horror", " Thriller"],
+  "ratingValue": "8.6",
+  "summary_text": "A paranormal investigation YouTube channel team explores an abandoned prison, only to uncover supernatural forces beyond their control.",
+  "ratingCount": "753",
+  "director": { "name": "Brian Jagger", "name_id": "nm0415613" },
+  "cast": [
+    { "name": "Todd Haberkorn", "name_id": "nm1312566" },
+    { "name": "Paris Warner", "name_id": "nm7165727" },
+    { "name": "Don Shanks", "name_id": "nm0788077" },
+    { "name": "Brian Telestai", "name_id": "nm3035101" }
+  ]
+},
   {
     "ImdbId": "tt3059106",
     "_id": "tt3059106",
@@ -2350,25 +2362,26 @@
     ]
   },
   {
-    "ImdbId": "tt14434022",
-    "_id": "tt14434022",
-    "name": "Madhura Wines",
-    "poster_url": "https://m.media-amazon.com/images/M/MV5BNzY5ZmY4ODktZWIxZi00NTJhLTg1YjgtOTg0NDUyOTExMzA1XkEyXkFqcGdeQXVyNjkwOTg4MTA@.",
-    "year": "2021",
-    "certificate": "",
-    "runtime": "127",
-    "genre": ["Drama"],
-    "ratingValue": "8.6",
-    "summary_text": "\"Madhura\" a name that cannot be forgotten by alcohol addicted Ajay. \"Madhura\" a cooked up story around that character name led Anjali to new relationship. \"Madhura\" a wine shop name that ...                See full summary\u00a0\u00bb",
-    "ratingCount": "26",
-    "director": { "name": "Jaya Kishore .B.", "name_id": "nm12479128" },
-    "cast": [
-      { "name": "Sunny Naveen", "name_id": "nm6960341" },
-      { "name": "Seema Chowdary", "name_id": "nm10797525" },
-      { "name": "Sammohit Tumuluri", "name_id": "nm9378816" },
-      { "name": "Allu Ramesh", "name_id": "nm10469815" }
-    ]
-  },
+  "ImdbId": "tt6728096",
+  "_id": "tt6728096",
+  "name": "Atomic Apocalypse",
+  "poster_url": "https://m.media-amazon.com/images/M/MV5BNGIzOWFkOWYtNTI3NC00NGM2LWIyMjItZWQ1Zjg0YjEwZTI5XkEyXkFqcGc@._V1_.jpg",
+  "url": "https:/https://www.youtube.com/watch?v=_Cfb2akPH3Y&ab_channel=UMSFILMUKRAINE",
+  "year": "2018",
+  "certificate": "Not Rated",
+  "runtime": "105",
+  "genre": ["Action", " Drama"],
+  "ratingValue": "8.6",
+  "summary_text": "Two years after the nuclear apocalypse, a mother struggles to reunite with her daughter across a deadly wasteland controlled by warlords and mutants.",
+  "ratingCount": "542",
+  "director": { "name": "Martin Gooch", "name_id": "nm0329609" },
+  "cast": [
+    { "name": "Joanne Gale", "name_id": "nm3044323" },
+    { "name": "Simon Dutton", "name_id": "nm0245255" },
+    { "name": "Kristian Nairn", "name_id": "nm1655475" },
+    { "name": "Bruce Payne", "name_id": "nm0668209" }
+  ]
+},
   {
     "ImdbId": "tt11234910",
     "_id": "tt11234910",
@@ -3812,25 +3825,26 @@
     ]
   },
   {
-    "ImdbId": "tt10731732",
-    "_id": "tt10731732",
-    "name": "Romantic Criminals",
-    "poster_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCltzly99sc1G6JVexx-CnohkDVGdwG-Za_A&s",
-    "year": "2019",
-    "certificate": "",
-    "runtime": "126",
-    "genre": ["Romance"],
-    "ratingValue": "8.7",
-    "summary_text": "Add a Plot",
-    "ratingCount": "44",
-    "director": { "name": "Suneel Kumar Reddy", "name_id": "nm6190049" },
-    "cast": [
-      { "name": "Fm Babai", "name_id": "nm9855560" },
-      { "name": "Vinay Mahdevan", "name_id": "nm11746509" },
-      { "name": "Mounika", "name_id": "nm11746510" },
-      { "name": "Avantika Munni", "name_id": "nm10339753" }
-    ]
-  },
+  "ImdbId": "tt13694706",
+  "_id": "tt13694706",
+  "name": "Armageddon Tales",
+  "poster_url": "https://m.media-amazon.com/images/M/MV5BMWRhY2MyNGItN2RkMy00ZTFmLTk4N2EtOWM4ZDAyNTI1MGI2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "url": "https://www.youtube.com/watch?v=oIKuGHk0oZU&ab_channel=UMSFILMUKRAINE",
+  "year": "2021",
+  "certificate": "Not Rated",
+  "runtime": "96",
+  "genre": ["Action", " Drama"],
+  "ratingValue": "8.7",
+  "summary_text": "After the world ends, survivors in a post-apocalyptic society struggle with memory, hope, and connection in a world forever changed.",
+  "ratingCount": "459",
+  "director": { "name": "Kaleb Lechowski", "name_id": "nm5245464" },
+  "cast": [
+    { "name": "Jeremy Dash", "name_id": "nm2631965" },
+    { "name": "Ernest Kingsley Jr.", "name_id": "nm6989739" },
+    { "name": "Sarah Joe Chamoun", "name_id": "nm5146724" },
+    { "name": "Joshua Fitz", "name_id": "nm10204236" }
+  ]
+},
   {
     "ImdbId": "tt14799552",
     "_id": "tt14799552",
@@ -4696,25 +4710,26 @@
     ]
   },
   {
-    "ImdbId": "tt0259261",
-    "_id": "tt0259261",
-    "name": "Daana Veeraa Soora Karna",
-    "poster_url": "https://m.media-amazon.com/images/M/MV5BODc0NjViOTUtZWM1Ny00NWQyLTlhNTgtYmYxNTAxNzRkMGEwXkEyXkFqcGdeQXVyNjQ1MDcxNzM@.",
-    "year": "1977",
+    "ImdbId": "tt10948718",
+    "_id": "tt10948718",
+    "name": "The Heist of the Century",
+    "poster_url": "https://uakino.me/uploads/posts/2021-05/1621521562_11.jpg",
+    "url": "https://www.youtube.com/watch?v=AlM7oD7Ms3E",
+    "year": "2020",
     "certificate": "",
-    "runtime": "233",
-    "genre": ["Action", " Drama", " Fantasy"],
-    "ratingValue": "8.9",
     "summary_text": "Abandoned at birth, brave and loyal Karna grows up to acquire skills as a warrior to battle the Pandavas.",
     "ratingCount": "690",
     "director": { "name": "N.T. Rama Rao", "name_id": "nm0004417" },
+    "ratingCount": "6900",
+    "director": { "name": "Ariel Winograd", "name_id": "" },
     "cast": [
-      { "name": "N.T. Rama Rao", "name_id": "nm0004417" },
-      { "name": "Dhulipala", "name_id": "nm0223591" },
-      { "name": "Mikkilineni", "name_id": "nm0586579" },
-      { "name": "Harikrishna Nandamuri", "name_id": "nm0620791" }
+      { "name": "Guillermo Francella", "name_id": "nm7342732" },
+      { "name": "Diego Peretti", "name_id": "nm12991796" },
+      { "name": "Pablo Rago", "name_id": "nm12991795" },
+      { "name": "Luis Luque", "name_id": "nm12991794" }
     ]
   },
+
   {
     "ImdbId": "tt11952760",
     "_id": "tt11952760",
